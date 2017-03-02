@@ -24,10 +24,11 @@ alias be='bundle exec'
 alias cdgem='cd ~/.rvm/gems/ruby-1.9.3-p545/gems'
 
 alias ls="ls --color"
+alias arepl="atom . && lein repl"
 
 export PATH=/home/mauricio/bin:/home/mauricio/.rvm/bin:$PATH
 source /home/mauricio/.rvm/scripts/rvm
-/home/mauricio/bin/z
+. /home/mauricio/bin/z
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /home/mauricio/bin/google-cloud-sdk/path.bash.inc ]; then
