@@ -2,6 +2,7 @@
                   [refactor-nrepl "2.2.0"]
                   [lein-try "0.4.3"]
                   [lein-cloverage "1.0.9"]
+                  [jonase/eastwood "0.2.3"]
                   ]
         :dependencies [[slamhound "1.5.5"]
                        [spyscope "0.1.5"]
