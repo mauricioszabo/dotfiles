@@ -40,3 +40,5 @@ if [ -f /home/mauricio/bin/google-cloud-sdk/completion.bash.inc ]; then
 fi
 
 source <(kubectl completion bash)
+export ANDROID_HOME=/home/mauricio/Android/Sdk
+
