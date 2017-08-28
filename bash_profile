@@ -41,8 +41,6 @@ if [ -f /home/mauricio/bin/google-cloud-sdk/completion.bash.inc ]; then
   source '/home/mauricio/bin/google-cloud-sdk/completion.bash.inc'
 fi
 
-source <(kubectl completion bash)
-
 export ANDROID_HOME=${HOME}/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
