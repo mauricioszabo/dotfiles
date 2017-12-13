@@ -15,6 +15,7 @@ alias gits='git status'
 alias gitc='git commit -v'
 alias gita='git add'
 alias gitd='git diff --color'
+alias gitm='git checkout master && git pull'
 
 alias runica='cd ~/Downloads && ls *.ica -tr | tail -n 1 | xargs /opt/Citrix/ICAClient/wfica'
 alias rvm-restart='rvm_reload_flag=1 source '\''/home/mauricio/.rvm/scripts/rvm'\'''
@@ -24,8 +25,16 @@ alias be='bundle exec'
 alias cdgem='cd ~/.rvm/gems/ruby-1.9.3-p545/gems'
 
 alias ls="ls --color"
-alias arepl="atom . && lein repl"
-alias acompose="atom . && docker-compose run --service-ports repl"
+runatom () {
+    CURR_DIR=`pwd`
+    cd ~/.atom/packages/clojure-plus
+    atom $CURR_DIR
+    cd -
+}
+alias arepl="runatom && lein repl"
+alias aconsole="runatom && cd - && ./scripts/console"
+
+alias remove-docker='docker rmi -f $(docker images | awk "/ / { print $3 }")'
 
 export PATH=/home/mauricio/bin:/home/mauricio/.rvm/bin:$PATH
 source /home/mauricio/.rvm/scripts/rvm
@@ -44,6 +53,7 @@ fi
 export ANDROID_HOME=${HOME}/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH=/home/mauricio/bin/node-v8.7.0-linux-x64/bin/:$PATH
 
 
 if [ -f /home/mauricio/.jfrog ]; then

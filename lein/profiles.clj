@@ -13,6 +13,8 @@
                        [com.billpiel/sayid "0.0.10"]
                        [org.clojure/tools.namespace "0.2.11"] 
                        [pjstadig/humane-test-output "0.8.1"]]
-;         :injections [(require 'spyscope.core)]
+         :aliases {"slamhound" ["run" "-m" "slam.hound"]}
+         :injections [;(require 'spyscope.core)
+            (defn spy [v] (println v) v)]
 }}
 
