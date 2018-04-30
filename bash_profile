@@ -61,3 +61,6 @@ export PATH=/home/mauricio/bin/node-v8.7.0-linux-x64/bin/:$PATH
 if [ -f /home/mauricio/.jfrog ]; then
   source '/home/mauricio/.jfrog'
 fi
+
+xmodmap -e "keycode 62 = Return"
+
