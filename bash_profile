@@ -62,5 +62,5 @@ if [ -f /home/mauricio/.jfrog ]; then
   source '/home/mauricio/.jfrog'
 fi
 
-xmodmap -e "keycode 62 = Return"
+xinput list | grep 'SN TECH    USBGamingMouse' && xmodmap -e "keycode 62 = Return"
 
