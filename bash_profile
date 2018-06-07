@@ -27,7 +27,7 @@ alias ls="ls --color"
 alias arepl="atom . && lein repl"
 alias acompose="atom . && docker-compose run --service-ports repl"
 
-export PATH=/home/mauricio/bin:/home/mauricio/.rvm/bin:$PATH
+export PATH=/home/mauricio/bin:/home/mauricio/.local/bin:/home/mauricio/.rvm/bin:$PATH
 source /home/mauricio/.rvm/scripts/rvm
 . /home/mauricio/bin/z
 
@@ -42,7 +42,7 @@ if [ -f /home/mauricio/bin/google-cloud-sdk/completion.bash.inc ]; then
 fi
 
 source <(kubectl completion bash)
-export ANDROID_HOME=${HOME}/Android/Sdk
+export ANDROID_HOME=${HOME}/android
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
@@ -50,3 +50,5 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 if [ -f /home/mauricio/.jfrog ]; then
   source '/home/mauricio/.jfrog'
 fi
+
+# export PATH=/opt/wine-devel/bin:$PATH
