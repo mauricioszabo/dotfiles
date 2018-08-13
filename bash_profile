@@ -38,7 +38,7 @@ alias remove-docker='docker rmi -f $(docker images | awk "/ / { print $3 }")'
 
 alias ag="ag --color-path '1;34' --color-line-number '1;35'"
 
-export PATH=/home/mauricio/bin:/home/mauricio/.rvm/bin:$PATH
+export PATH=/home/mauricio/bin:/home/mauricio/.local/bin:/home/mauricio/.rvm/bin:$PATH
 source /home/mauricio/.rvm/scripts/rvm
 . /home/mauricio/bin/z
 
@@ -52,6 +52,7 @@ if [ -f /home/mauricio/bin/google-cloud-sdk/completion.bash.inc ]; then
   source '/home/mauricio/bin/google-cloud-sdk/completion.bash.inc'
 fi
 
+source <(kubectl completion bash)
 export ANDROID_HOME=${HOME}/android
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
