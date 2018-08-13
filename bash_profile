@@ -52,7 +52,7 @@ if [ -f /home/mauricio/bin/google-cloud-sdk/completion.bash.inc ]; then
   source '/home/mauricio/bin/google-cloud-sdk/completion.bash.inc'
 fi
 
-export ANDROID_HOME=${HOME}/Android/Sdk
+export ANDROID_HOME=${HOME}/android
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH=/home/mauricio/bin/node-v8.7.0-linux-x64/bin/:$PATH
@@ -62,5 +62,5 @@ if [ -f /home/mauricio/.jfrog ]; then
   source '/home/mauricio/.jfrog'
 fi
 
-xinput list | grep 'SN TECH    USBGamingMouse' && xmodmap -e "keycode 62 = Return"
-
+xinput list | grep 'SN TECH    USBGamingMouse' >/dev/null && xmodmap -e "keycode 62 = Return"
+#closh

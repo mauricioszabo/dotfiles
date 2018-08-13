@@ -7,6 +7,7 @@
         :dependencies [[slamhound "1.5.5"]
  ;                      [spyscope "0.1.5" :exclusions [clj-time]]
                        [org.clojure/tools.nrepl "0.2.12"] 
+                       [debugger "0.2.1"]
 	               [cider/cider-nrepl "0.13.0"]
                        [proto-repl "0.3.1"]
                        [cloverage "1.0.9"]
