@@ -1,9 +1,13 @@
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 
-xinput --set-prop 'Kensington      Kensington Expert Mouse' 'Evdev Wheel Emulation Axes' 6 7 4 5
-xinput --set-prop 'Kensington      Kensington Expert Mouse' 'Evdev Wheel Emulation Button' 8
-xinput --set-prop 'Kensington      Kensington Expert Mouse' 'Evdev Wheel Emulation' 1
+#xinput --set-prop 'Kensington      Kensington Expert Mouse' 'Evdev Wheel Emulation Axes' 6 7 4 5
+#xinput --set-prop 'Kensington      Kensington Expert Mouse' 'Evdev Wheel Emulation Button' 8
+#xinput --set-prop 'Kensington      Kensington Expert Mouse' 'Evdev Wheel Emulation' 1
+
+xinput --set-prop pointer:"Kensington      Kensington Expert Mouse" "libinput Scroll Method Enabled" 0 0 1
+xinput --set-prop pointer:"Kensington      Kensington Expert Mouse" "libinput Button Scrolling Button" 8
 xinput --set-button-map 'Kensington      Kensington Expert Mouse' 1 2 3 4 5 6 7 2 0
+
 #xinput --set-button-map 'Kensington      Kensington Expert Mouse' 3 2 1 4 5 6 7 2 0
 
 fgr () 
@@ -37,8 +41,10 @@ alias aconsole="runatom && cd - && ./scripts/console"
 alias remove-docker='docker rmi -f $(docker images | awk "/ / { print $3 }")'
 
 alias ag="ag --color-path '1;34' --color-line-number '1;35'"
+alias copy="xclip -selection clipboard"
 
-export PATH=/home/mauricio/bin:/home/mauricio/.local/bin:/home/mauricio/.rvm/bin:$PATH
+export PATH=/home/mauricio/bin/genymotion/tools/:$PATH
+export PATH=/home/mauricio/bin/node-v9.11.1-linux-x64/bin:/home/mauricio/bin:/home/mauricio/.local/bin:/home/mauricio/.rvm/bin:$PATH
 source /home/mauricio/.rvm/scripts/rvm
 . /home/mauricio/bin/z
 
@@ -64,4 +70,9 @@ if [ -f /home/mauricio/.jfrog ]; then
 fi
 
 xinput list | grep 'SN TECH    USBGamingMouse' >/dev/null && xmodmap -e "keycode 62 = Return"
+
+alias tablet-on-view='xinput --map-to-output $( xinput list --id-only "UC-LOGIC Tablet WP5540U Pen Pen (0)" ) HDMI-1'
+alias mirror='xrandr --output HDMI-1 --off && sleep 10 && xrandr --output HDMI-1 --same-as eDP-1 --auto'
+alias mysql-docker="docker run --rm -it -eMYSQL_ALLOW_EMPTY_PASSWORD=t -p3306:3306 mysql:5.7"
+
 #closh

@@ -1,5 +1,5 @@
-(require '[cljs.nodejs]
-	 '[clojure.string :as str])
+;(require '[cljs.nodejs]
+;	 '[clojure.string :as str])
 
 (def PS1 "\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ ")
 
@@ -10,42 +10,32 @@
 (defalias gitd "git diff --color")
 (defalias gitm "git checkout master && git pull")
 
-(defcmd runatom []
-  (let [curr-dir (sh-str pwd)
-        home (sh-str echo $HOME)]
-    (cd (str home))
-    (cd ".atom/packages/clojure-plus")
-    (sh atom (str curr-dir))
-    (cd curr-dir)))
-
-(defcmd arepl [] 
-  runatom
-  lein repl)
-
-(defalias be "bundle exec")
-
-(defmulti run-docker* (fn [img] img))
-(defmethod run-docker* "rabbit" [_]
-  (sh docker run --rm --hostname my-rabbit --name some-rabbit -p "5672:5672" -p "15672:15672" rabbitmq:3-management))
-
-(defmethod run-docker* js/undefined [_]
-  (println "Please choose an pre-defined image"))
-
-(defcmd run-docker [image] (run-docker* image))
-
-(defn read-file [file] (sh-str cat (identity file)))
+(defn- git-stat []
+  (let [{:keys [code stdout]} (sh-value git status)]
+    (when (= 0 code)
+      (let [[_ branch] (re-find #"On branch (.*?)\s" stdout)
+            stg (re-find #"Changes not staged " stdout)
+            [_ ahead] (re-find #"ahead.*(\d+) commits" stdout)
+            [_ behind] (re-find #"behind.*(\d+) commits" stdout)]
+        (cond-> (str "\033[01;32m" branch)
+                stg (str "\033[;34m*")
+                ahead (str "\033[;32m +" ahead)
+                behind (str "\033[;31m -" behind))))))
 
 (defn closh-prompt []
   (let [name (str (sh-str whoami) "@" (sh-str hostname))
         path (str/replace-first (sh-str pwd) (getenv "HOME") "~")]
-        
-    (str "\033[01;32m" name " \033[01;34m" path "\033[00m " (.getName *ns*) "=> ")))
+    (if-let [git (git-stat)]
+      (str git " \033[01;34m" path "\033[00m " (.getName *ns*) "=> ")
+      (str "\033[01;32m" name " \033[01;34m" path "\033[00m " (.getName *ns*) "=> "))))
 
+#_
 (defn active-monitors []
   (->> (sh-lines "xrandr") 
        (filter #(re-find #" connected" %)) 
        (map #(clojure.string/replace % #" connected.*" ""))))
 
+#_
 (defn shx-str [cmd & args]
   (-> (closh.core/shx (str cmd) args)
     (closh.core/process-output)
