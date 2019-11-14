@@ -44,7 +44,7 @@ alias ag="ag --color-path '1;34' --color-line-number '1;35'"
 alias copy="xclip -selection clipboard"
 
 export PATH=/home/mauricio/bin/genymotion/tools/:$PATH
-export PATH=/home/mauricio/bin/node-v9.11.1-linux-x64/bin:/home/mauricio/bin:/home/mauricio/.local/bin:/home/mauricio/.rvm/bin:$PATH
+export PATH=/home/mauricio/bin/node-v10.6.0-linux-x64/bin:/home/mauricio/bin:/home/mauricio/.local/bin:/home/mauricio/.rvm/bin:$PATH
 source /home/mauricio/.rvm/scripts/rvm
 . /home/mauricio/bin/z
 
