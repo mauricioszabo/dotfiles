@@ -1,0 +1,9 @@
+clear mod1
+clear mod4
+
+!Make right alt to look like Super_R
+!I'm assuming your right alt has keycode 108, you can check using xev
+keycode 62 = Return
+
+!Add the Super_L and Super_R keys to the modifier mod4
+add mod4 = Super_L Super_R
