@@ -4,7 +4,7 @@ SET ZO_CMD:zo
 SET Z_CMD:z
 SET Z_DATA:/home/mauricio/\x2elocal/share/z/data
 SET Z_DATA_DIR:/home/mauricio/\x2elocal/share/z
-SET Z_EXCLUDE:/home/mauricio
+SET Z_EXCLUDE:\x5e/home/mauricio\x24
 SET __fish_classic_git_prompt_initialized:\x1d
 SET __fish_init_2_39_8:\x1d
 SET __fish_init_2_3_0:\x1d
@@ -36,5 +36,5 @@ SET fish_pager_color_completion:black
 SET fish_pager_color_description:B3A06D\x1eyellow
 SET fish_pager_color_prefix:black
 SET fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SET fish_user_abbreviations:gits\x20git\x20status\x1egitd\x20git\x20diff\x1egitc\x20git\x20commit\x20\x2dv\x1egita\x20git\x20add\x1ebe\x20bundle\x20exec
-SET fish_user_paths:/home/mauricio/bin/node\x2dcurrent/bin/\x1e/home/mauricio/\x2elocal/bin\x1e/home/mauricio/bin/node\x2dcurrent/bin/\x1e/home/mauricio/\x2elocal/bin\x1e/home/mauricio/\x2elocal/bin
+SET fish_user_abbreviations:gits\x20git\x20status\x1egitd\x20git\x20diff\x1egitc\x20git\x20commit\x20\x2dv\x1egita\x20git\x20add\x1ebe\x20bundle\x20exec\x1egitm\x20git\x20checkout\x20master\x3b\x20and\x20git\x20pull\x1edocker\x2dclean\x20docker\x20container\x20prune\x20\x2df\x3b\x20docker\x20image\x20prune\x20\x2df\x3b\x20docker\x20network\x20prune\x20\x2df\x3b\x20docker\x20volume\x20prune\x20\x2df\x1eclj\x2drepl\x20clj\x20\x2dJ\x2dDclojure\x2eserver\x2erepl\x3d\x3aport\x20clj\x20\x2dJ\x2dDclojure\x2eserver\x2erepl\x3d4444\x20clj\x20\x2dJ\x2dDclojure\x2eserver\x2erepl\x3d\x3aaccept\x20clj\x20\x2dJ\x2dDclojure\x2eserver\x2erepl\x3dclojure\x2ecore\x2eserver/repl\x1elag\x20/home/mauricio/bin/kafka_2\x2e12\x2d2\x2e7\x2e0/bin/kafka\x2dconsumer\x2dgroups\x2esh\x20\x2d\x2dbootstrap\x2dserver\x20b\x2d3\x2ekafkaclusterpaygo\x2dv1\x2evbw1ne\x2ec2\x2ekafka\x2eus\x2deast\x2d1\x2eamazonaws\x2ecom\x3a9092\x2cb\x2d2\x2ekafkaclusterpaygo\x2dv1\x2evbw1ne\x2ec2\x2ekafka\x2eus\x2deast\x2d1\x2eamazonaws\x2ecom\x3a9092\x2cb\x2d1\x2ekafkaclusterpaygo\x2dv1\x2evbw1ne\x2ec2\x2ekafka\x2eus\x2deast\x2d1\x2eamazonaws\x2ecom\x3a9092\x20\x2d\x2ddescribe\x20\x2d\x2dtimeout\x3d220000\x20\x20\x2d\x2dgroup\x1ebrokers\x20b\x2d3\x2ekafkaclusterpaygo\x2dv1\x2evbw1ne\x2ec2\x2ekafka\x2eus\x2deast\x2d1\x2eamazonaws\x2ecom\x3a9092\x2cb\x2d2\x2ekafkaclusterpaygo\x2dv1\x2evbw1ne\x2ec2\x2ekafka\x2eus\x2deast\x2d1\x2eamazonaws\x2ecom\x3a9092\x2cb\x2d1\x2ekafkaclusterpaygo\x2dv1\x2evbw1ne\x2ec2\x2ekafka\x2eus\x2deast\x2d1\x2eamazonaws\x2ecom\x3a9092\x1euse\x2dprod\x20kubectl\x20config\x20use\x2dcontext\x20eks_SHARED_CLUSTER\x2dEKS\x2dPROD\x3b\x20and\x20kubectl\x20config\x20set\x2dcontext\x20\x2d\x2dcurrent\x20\x2d\x2dnamespace\x3dproduction\x1euse\x2dsand\x20kubectl\x20config\x20use\x2dcontext\x20eks_SHARED_CLUSTER\x2dEKS\x2dSANDBOX\x3b\x20and\x20kubectl\x20config\x20set\x2dcontext\x20\x2d\x2dcurrent\x20\x2d\x2dnamespace\x3dsandbox\x1ekl\x20kubectl\x20logs\x20\x2d\x2dmax\x2dlog\x2drequests\x3d15\x20\x2dl\x20app\x3d\x1ekg\x20kubectl\x20get\x20pod\x20\x7c\x20grep\x1epath_add\x20set\x20\x2d\x2duniversal\x20\x2d\x2dappend\x20fish_user_paths
+SET fish_user_paths:/home/mauricio/bin\x1e/home/mauricio/bin/node\x2dcurrent/bin/\x1e/home/mauricio/\x2elocal/bin\x1e/home/mauricio/bin/node\x2dcurrent/bin/\x1e/home/mauricio/\x2elocal/bin\x1e/home/mauricio/\x2elocal/bin\x1e/home/mauricio/bin/gravie/

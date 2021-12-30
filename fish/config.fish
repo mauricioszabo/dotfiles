@@ -2,7 +2,7 @@ xinput --set-prop pointer:"Kensington      Kensington Expert Mouse" "libinput Sc
 xinput --set-prop pointer:"Kensington      Kensington Expert Mouse" "libinput Button Scrolling Button" 8
 xinput --set-button-map 'Kensington      Kensington Expert Mouse' 1 2 3 4 5 6 7 2 0
 
-rvm default
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 ### GIT
 # Fish git prompt
@@ -127,4 +127,4 @@ function fish_prompt
   echo -n '$ '
   set_color normal
 end
-rvm default
+source ~/.asdf/asdf.fish

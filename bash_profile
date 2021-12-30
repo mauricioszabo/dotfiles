@@ -76,3 +76,4 @@ alias mirror='xrandr --output HDMI-1 --off && sleep 10 && xrandr --output HDMI-1
 alias mysql-docker="docker run --rm -it -eMYSQL_ALLOW_EMPTY_PASSWORD=t -p3306:3306 mysql:5.7"
 
 #closh
+if [ -e /home/mauricio/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mauricio/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
